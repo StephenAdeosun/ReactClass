@@ -1,7 +1,9 @@
 import About from './components/AboutUs'
 import Projects from './components/Projects'
 import './App.css'
-import {Routes, Route}  from "react-router-dom"
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router";
+
 import Lists from './components/Lists'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -15,7 +17,6 @@ function App() {
 
       <Navbar/>
 
-      
       <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/users' element={<Users/>} />
@@ -24,6 +25,7 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/lists' element={<Lists/>} /> 
       </Routes>
+
 
       
       
