@@ -1,11 +1,10 @@
 import About from './components/AboutUs'
 import Projects from './components/Projects'
 import './App.css'
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import {Routes, Route } from "react-router-dom";
 
 import Lists from './components/Lists'
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Register from './pages/register'
 import Users from './pages/users'
@@ -13,9 +12,9 @@ import Users from './pages/users'
 function App() {
 
   return (
-    <>    
+    <div className="App">    
 
-      <Navbar/>
+      {/* <Navbar/> */}
 
       <Routes>
           <Route path='/' element={<Home/>} />
@@ -28,9 +27,9 @@ function App() {
 
 
       
-      
+    </div>
 
-    </>
+    
   )
 }
 export default App
