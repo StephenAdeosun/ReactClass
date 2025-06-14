@@ -52,7 +52,7 @@ function SignUpForm (){
     };
 
     return(
-        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center h-screen">
             {/* <h1>Name: {name}</h1> */}
 
             {/* <h1>Email: {email}</h1>  */}

@@ -1,7 +1,9 @@
 // create a navbar
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import UserContext from "./Context"
+import { SunMoon,Moon } from 'lucide-react';
 
 // style this navbar with css
 const StyleCss = {
@@ -16,19 +18,21 @@ const StyleCss = {
 
 
 const Navbar = () => {
+const {user, dark , ToggleMode} = useContext(UserContext)
+
   return (
-    <nav className="navbar"style={StyleCss}> 
-      <ul className="navbar-list">
-        <li className="navbar-item">
-          <Link to="/">Projects</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/about">About Us</Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/lists">Lists</Link>
-        </li>
-      </ul>
+    <nav className={` flex  ${
+      dark === "dark" ? "text-white bg-black" : "text-black bg-white"}`}
+    > 
+    <h1>{user}</h1>
+    <p className='text-2xl ml-6'>{dark}</p>
+    <button onClick={ToggleMode} >
+      {
+        dark === "light" ? <SunMoon className='text-red-600'/> : <Moon />
+      }
+    </button>
+            {/* <button  onClick={ToggleMode}  className="text-white shadow-lg hover:bg-white hover:text-blue-400  shadow-blue-300 flex mt-[18px] rounded-[200px] cursor-pointer bg-blue-400 p-6 mx-auto">TOGGLE</button> */}
+
     </nav>
   );
 }
